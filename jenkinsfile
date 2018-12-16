@@ -7,7 +7,7 @@ pipeline {
            script {
                echo "TARGET_ENVIRONMENT: ${params.TARGET_ENVIRONMENT}"
                //send build started notifications
-               slackSend (color: '#FFFF00', message: "STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' Environment: ${params.TARGET_ENVIRONMENT} (${env.BUILD_URL})", channel: "devlop", tokenCredentialId:"IeBFDmcha4z5bK6gkIt9kMEd")
+               slackSend (color: '#FFFF00', message: "STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' Environment: ${params.TARGET_ENVIRONMENT} (${env.BUILD_URL})", channel: "devlop", tokenCredentialId:"slack-token")
                    echo 'checkout the code from the test-branch'
                    git(branch: 'test-branch',credentialsId: '953d64180b394ebc42344d07358aa6ca3167a5b6', url: 'https://github.com/khagenrai/forgaming_Purpose.git', changelog: true)
            }
