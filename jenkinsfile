@@ -28,10 +28,7 @@ pipeline {
                    sh 'echo subscriptionIdVariable=$SUBSCRIPTIONIDVARIABLE clientIdVariable=$CLIENTIDVARIABLE clientSecretVariable=$CLIENTSECRETVARIABLE tenantIdVariable=$TENANTIDVARIABLE'
                    sh 'az login --service-principal -u $CLIENTIDVARIABLE -p $CLIENTSECRETVARIABLE -t $TENANTIDVARIABLE'
                    sh 'az account set -s $SUBSCRIPTIONIDVARIABLE'
-                   sh 'az resource list'
-                   //sh 'az webapp stop -g EVO_Data_Grinder_INT  -n euevoawain030'
-                   //sh 'az webapp deployment source config-zip -g EVO_Data_Grinder_INT  -n euevoawain030  --src /tmp/evodashboard-${BUILD_NUMBER}.zip'
-                   //sh 'az webapp start -g EVO_Data_Grinder_INT  -n euevoawain030'
+                   sh 'az resource list
            }
         }
    }
