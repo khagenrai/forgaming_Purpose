@@ -1,6 +1,10 @@
 pipeline {
-    agent { any }
+    agent any 1
     stages {
-        git url: 'https://github.com/khagenrai/forgaming_Purpose.git'
+        stage('Stage 1') {
+            steps {
+                echo 'Hello world!' 2
             }
         }
+    }
+}
