@@ -6,6 +6,7 @@ pipeline {
        steps {
            script {
                echo "TARGET_ENVIRONMENT: ${params.TARGET_ENVIRONMENT}"
+               if TARGET_ENVIRONMENT: $qa-webapp
                //send build started notifications
                slackSend (color: '#FFFF00', message: "STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' Environment: ${params.TARGET_ENVIRONMENT} (${env.BUILD_URL})", channel: "devlop", tokenCredentialId:"slack-token")
                    echo 'checkout the code from the test-branch'
